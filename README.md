@@ -11,6 +11,7 @@ To read consecutive records containing Python integer, single-precision and
 double-precision data types,
 
 ```python
+>>> import numpy as np
 >>> from fio import FortranFile
 >>> with FortranFile('filename') as ff:
 >>>     int_data = ff.read_record(int)
@@ -28,6 +29,7 @@ representations, are accepted data types.
 To write a single `int32` value of `1` as a single record,
 
 ```python
+>>> import numpy as np
 >>> from fio import FortranFile
 >>> with FortranFile('filename', 'wb') as ff:
 >>>     ff.write_value(1, np.int32)
@@ -36,6 +38,7 @@ To write a single `int32` value of `1` as a single record,
 To write multiple values of the same type as a single record,
 
 ```python
+>>> import numpy as np
 >>> from fio import FortranFile
 >>> data = [1, 2]
 >>> dtype = np.float32
