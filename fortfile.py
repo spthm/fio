@@ -183,13 +183,12 @@ class FortranFile(object):
 
     def _close(self):
         if self._file is None:
-            raise FortranIOException("File not open")
+            return
         self._file.close()
         self._file = None
 
     def _open(self):
         if self._file is not None:
-            self._file.close()
             raise FortranIOException("File already open")
 
         self._file = open(self.fname, self._mode)
